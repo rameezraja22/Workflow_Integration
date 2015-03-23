@@ -1,42 +1,29 @@
 package com.batch.framework.workflow.entity;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.batch.framework.workflow.entity.id.EventBatchJobParamsKey;
+
 
 @Entity
 @Table(name="EVENT_BATCH_JOB_PARAMS")
 public class EventBatchJobParams {
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="JOB_ID",nullable=false)
-	private String jobId;
+	@EmbeddedId
+	private EventBatchJobParamsKey eventBatchJobParams;
 	
-	@Column(name="JOB_PARAM_KEY")
-	private String jobParamKey;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "JOB_ID", insertable = false, updatable = false)
+	private EventBatchConfig eventBatchConfig;
 	
 	@Column(name="JOB_PARAM_VALUE")
 	private String jobParamValue;
-
-	public String getJobId() {
-		return jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
-	public String getJobParamKey() {
-		return jobParamKey;
-	}
-
-	public void setJobParamKey(String jobParamKey) {
-		this.jobParamKey = jobParamKey;
-	}
 
 	public String getJobParamValue() {
 		return jobParamValue;
@@ -44,6 +31,22 @@ public class EventBatchJobParams {
 
 	public void setJobParamValue(String jobParamValue) {
 		this.jobParamValue = jobParamValue;
+	}
+
+	public EventBatchJobParamsKey getEventBatchJobParams() {
+		return eventBatchJobParams;
+	}
+
+	public void setEventBatchJobParams(EventBatchJobParamsKey eventBatchJobParams) {
+		this.eventBatchJobParams = eventBatchJobParams;
+	}
+
+	public EventBatchConfig getEventBatchConfig() {
+		return eventBatchConfig;
+	}
+
+	public void setEventBatchConfig(EventBatchConfig eventBatchConfig) {
+		this.eventBatchConfig = eventBatchConfig;
 	}
 	
 }
