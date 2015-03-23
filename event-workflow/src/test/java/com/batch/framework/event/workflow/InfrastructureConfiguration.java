@@ -2,14 +2,18 @@ package com.batch.framework.event.workflow;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 public class InfrastructureConfiguration {
+	
+	@Autowired
+	private DataSource dataSource;
 
-	@Bean
+	/*@Bean
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
@@ -19,6 +23,6 @@ public class InfrastructureConfiguration {
 		dataSource.setUsername("SYSTEM");
 		dataSource.setPassword("system123"); //ikajsyd_123
 		return dataSource;
-	}
+	}*/
 	
 }

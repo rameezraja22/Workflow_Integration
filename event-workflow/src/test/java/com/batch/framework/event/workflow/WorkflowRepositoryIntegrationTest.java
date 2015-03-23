@@ -19,6 +19,7 @@ public class WorkflowRepositoryIntegrationTest extends AbstractIntegrationTest {
 	public void findAll() {
 		Iterable<EventBatchConfig> results = workflowJobRepository.findAll();
 		Assert.notNull(results);
+		System.out.println("WorkFlow History Response :"+obj.toXML(results));
 	}
 	
 }

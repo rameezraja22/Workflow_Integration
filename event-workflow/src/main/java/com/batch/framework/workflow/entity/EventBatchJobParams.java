@@ -25,14 +25,6 @@ public class EventBatchJobParams {
 	@Column(name="JOB_PARAM_VALUE")
 	private String jobParamValue;
 
-	public String getJobParamValue() {
-		return jobParamValue;
-	}
-
-	public void setJobParamValue(String jobParamValue) {
-		this.jobParamValue = jobParamValue;
-	}
-
 	public EventBatchJobParamsKey getEventBatchJobParams() {
 		return eventBatchJobParams;
 	}
@@ -48,5 +40,14 @@ public class EventBatchJobParams {
 	public void setEventBatchConfig(EventBatchConfig eventBatchConfig) {
 		this.eventBatchConfig = eventBatchConfig;
 	}
+
+	public String getJobParamValue() {
+		return jobParamValue;
+	}
+
+	public void setJobParamValue(String jobParamValue) {
+		this.jobParamValue = jobParamValue;
+	}
+
 	
 }

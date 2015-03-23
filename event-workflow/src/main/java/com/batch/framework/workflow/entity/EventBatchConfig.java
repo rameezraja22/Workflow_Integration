@@ -3,6 +3,7 @@ package com.batch.framework.workflow.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +37,7 @@ public class EventBatchConfig {
 	@Column(name="PASSWORD_EY")
 	private String passwordKey;
 	
-	@OneToMany(fetch=FetchType.EAGER,mappedBy="jobId")
+	@OneToMany(mappedBy = "eventBatchConfig", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private Set<EventBatchJobParams> batchJobParams = new HashSet<EventBatchJobParams>();
 
 	public String getJobId() {
@@ -94,5 +95,6 @@ public class EventBatchConfig {
 	public void setBatchJobParams(Set<EventBatchJobParams> batchJobParams) {
 		this.batchJobParams = batchJobParams;
 	}
+
 	
 }

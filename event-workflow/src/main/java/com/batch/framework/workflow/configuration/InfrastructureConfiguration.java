@@ -1,4 +1,4 @@
-package com.batch.framework.workflow.configuration;
+/*package com.batch.framework.workflow.configuration;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -55,10 +55,11 @@ public class InfrastructureConfiguration {
 		return new PersistenceExceptionTranslationPostProcessor();
 	}
 
-	/*
+	
 	 * Properties additionalProperties() { Properties properties = new
 	 * Properties(); properties.setProperty("hibernate.hbm2ddl.auto",
 	 * "create-drop"); properties.setProperty("hibernate.dialect",
 	 * "org.hibernate.dialect.MySQL5Dialect"); return properties; }
-	 */
+	 
 }
+*/
